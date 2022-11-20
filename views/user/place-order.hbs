@@ -15,6 +15,7 @@
 
         <label for="">Mobile</label>
         <input class="form-control" type="tel" id="mobile" name="mobile">
+        <input type="text" name="userId" id="" value="{{user._id}}" hidden>
 
         </div>
 
@@ -55,7 +56,7 @@
         $.ajax({
             url:'/place-order',
             method:'post',
-            data:$('#checkout-form').serialize,
+            data:$('#checkout-form').serialize(),
             success:(response)=>{
                 alert(response)
             }
