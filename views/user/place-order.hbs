@@ -1,6 +1,6 @@
 <section>
     <div class="container mt-5">
-     <form action="" id="checkout-form"></form>
+     <form action="" id="checkout-form">
      <div class="row">
         <div class="col-md-6">
             <h2>Enter delivery details</h2><br>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-md-4">
-            <div.container mt-5 ml-5 checkout>
+            <div container mt-5 ml-5 checkout>
                 <h5>Total Amount : Rs.{{total}}</h5>
                 <hr>
                 <div class="payment">
@@ -33,10 +33,13 @@
                     </label>
                     <button class="btn btn-primary float-right" type="submit">Checkout</button>
 
+                    </div>
+
                 </div>
             </div>
 
         </div>
+        </form>
 
 
 
@@ -45,3 +48,37 @@
     </div>
      </div>
 </section>
+
+<script>
+    $("#checkout-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:'/place-order',
+            method:'post',
+            data:$('#checkout-form').serialize,
+            success:(response)=>{
+                alert(response)
+            }
+        })
+    })
+</script>
+
+<style>
+    input[type=radio]{
+        width: 20px;
+        height: 20px;
+    }
+    label.radio-inline{
+        display: flex;
+        align-items: center;
+    }
+    .checkout{
+        border: 1px solid;
+        border-radius: 3px;
+        padding: 30px;
+    }
+
+    .payment{
+        padding-bottom: 16px;
+    }
+</style>
