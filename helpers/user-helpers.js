@@ -225,7 +225,8 @@ module.exports={
            }
 
            db.get().collection(collection.ORDER_COLLECTION).insertOne(orderObj).then((response)=>{
-            
+            //after order place detete user cart list 
+            db.get().collection(collection.CART_COLLECTION.deleteOne({user:objectId(order.userId)}))
             resolve()
            })
         })
