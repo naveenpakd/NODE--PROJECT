@@ -221,7 +221,8 @@ module.exports={
             paymentMethod:order['payment-method'],
             products:products,
             totalAmout:total,
-            status:status
+            status:status,
+            date:new Date()
            }
 
            db.get().collection(collection.ORDER_COLLECTION).insertOne(orderObj).then((response)=>{
