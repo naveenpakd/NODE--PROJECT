@@ -336,16 +336,6 @@ changePaymentStatus:(orderId)=>{
             resolve()
         })
     })
-},
-// deleteProduct:(prodId)=>{
-//     return new Promise((resolve,reject)=>{
-//         // console.log(prodId);
-//         // console.log(ObjectID(prodId));
-//         db.get().collection(collection.PORDUCT_COLLECTION).deleteOne({_id:objectId(prodId)}).then((response)=>{
-//             // console.log(response);
-//             resolve(response)
-//         })
-//     })
-// }
+}
 
 }    

@@ -14,12 +14,6 @@ module.exports={
             //callback(data.md5[0]._id)
         })
     },
-
-
-    
-
-    
-
     getAllProducts:()=>{
         return new Promise(async(resolve,reject)=>{
             let products=await db.get().collection(collection.PORDUCT_COLLECTION).find().toArray()
