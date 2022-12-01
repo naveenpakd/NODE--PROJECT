@@ -3,7 +3,8 @@ const { response } = require('../app');
 // const { render } = require('../app');
 const productHelpers = require('../helpers/product-helpers');
 var router = express.Router();
-var productHelper=require('../helpers/product-helpers')
+var productHelper=require('../helpers/product-helpers');
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -47,6 +48,8 @@ router.get('/delete-product/:id',(req,res)=>{
     res.redirect('/admin/')
   })
 })
+//remove 
+
 
 router.get('/edit-product/:id',async (req,res)=>{
   let product=await productHelpers.getProductDetails(req.params.id)
@@ -64,5 +67,4 @@ router.post('/edit-product/:id',(req,res)=>{
   })
 })
 
-
-module.exports = router;
+//try
